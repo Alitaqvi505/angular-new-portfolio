@@ -1,0 +1,38 @@
+<section class="contact-section">
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+    <p>If you have any questions or queires. Feel free to reach out.</p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <div class="form-group">
+        <input formControlName="name" placeholder="Your Name" />
+        <div class="error" *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input formControlName="email" placeholder="Your Email" />
+        <div class="error" *ngIf="contactForm.get('email')?.touched && contactForm.get('email')?.invalid">
+          Valid email is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <textarea formControlName="message" placeholder="Your Message"></textarea>
+        <div class="error" *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid">
+          Message cannot be empty.
+        </div>
+      </div>
+
+      <input type="checkbox" name="botcheck" style="display:none;">
+
+
+      <button type="submit" [disabled]="isSending">
+        {{ isSending ? 'Sending...' : 'Send Message' }}
+      </button>
+
+      <p class="status-message" [ngClass]="statusType" *ngIf="statusMessage">{{ statusMessage }}</p>
+    </form>
+  </div>
+</section>

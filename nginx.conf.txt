@@ -1,0 +1,25 @@
+server {
+    listen 80;
+    server_name maisazubair.com www.maisazubair.com;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    # Handle Angular client-side routing
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Serve static assets
+    location /assets/ {
+        alias /usr/share/nginx/html/assets/;
+    }
+
+    # Block hidden files (optional)
+    location ~ /\. {
+        deny all;
+    }
+
+    # Optional: increase upload size
+    client_max_body_size 10M;
+}

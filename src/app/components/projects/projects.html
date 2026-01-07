@@ -1,0 +1,24 @@
+<section class="projects-section">
+  <div class="projects-header">
+    <h1>Featured Projects</h1>
+    <p>Some of my best work combining AI, backend, and frontend technologies.</p>
+  </div>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects">
+      <div class="project-content">
+        <h2>{{ project.title }}</h2>
+        <p class="description">{{ project.description }}</p>
+
+        <div class="tech-stack">
+          <span *ngFor="let tech of project.techStack">{{ tech }}</span>
+        </div>
+
+        <div class="buttons">
+          <a *ngIf="project.github" href="{{ project.github }}" target="_blank" class="btn-github">View on GitHub</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
