@@ -1,13 +1,15 @@
 <section class="projects-section">
   <div class="projects-header">
-    <h1>Featured Projects</h1>
-    <p>Some of my best work combining AI, backend, and frontend technologies.</p>
+    <h1>Professional Experience</h1>
+    <p>Some of my best work delivering strategic tax compliance, advisory, and dispute resolution across the GCC.</p>
   </div>
 
   <div class="projects-grid">
     <div class="project-card" *ngFor="let project of projects">
       <div class="project-content">
         <h2>{{ project.title }}</h2>
+        <p class="position">{{ project.position }}</p>
+
         <p class="description">{{ project.description }}</p>
 
         <div class="tech-stack">
@@ -15,9 +17,11 @@
         </div>
 
         <div class="buttons">
-          <a *ngIf="project.github" href="{{ project.github }}" target="_blank" class="btn-github">View on GitHub</a>
-          
-        </div>
+  <a *ngIf="project.image" href="#" target="_blank">
+    <img [src]="project.image" alt="Project Image" class="project-img">
+  </a>
+</div>
+
       </div>
     </div>
   </div>

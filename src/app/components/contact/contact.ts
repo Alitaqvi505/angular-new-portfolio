@@ -33,7 +33,7 @@ export class Contact {
       const { name, email, message } = this.contactForm.value;
 
       const data = {
-        access_key: '4e6ad5f6-e13f-45fe-a3fe-9a700d6fcadf', 
+        access_key: 'a55ab9cc-de2d-452e-94ba-118b49628963', 
         name,
         email,
         message,
